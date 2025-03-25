@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club de Futbol Badalona Futur</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - League Spartan -->
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary-color: #0058A8;
+        }
+        
+        * {
+            font-family: 'League Spartan', sans-serif;
+        }
+
+        .bg-primary {
+            background-color: var(--primary-color);
+        }
+
+        .text-primary {
+            color: var(--primary-color);
+        }
+
+        .border-primary {
+            border-color: var(--primary-color);
+        }
+
+        .standings-row {
+            border-bottom: 1px solid #edf2f7;
+        }
+
+        .standings-row:last-child {
+            border-bottom: none;
+        }
+
+        .standings-row:hover {
+            background-color: #f8fafc;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0NSIgZmlsbD0iIzAwNThBOCIvPjx0ZXh0IHg9IjUwIiB5PSI1MCIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMjBweDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij5DRkI8L3RleHQ+PC9zdmc+" alt="CF Badalona Futur" class="h-12 mr-3">
+                    <span class="text-2xl font-bold text-primary">CF Badalona Futur</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-gray-600 hover:text-primary transition-colors">Inicio</a>
+                    <a href="#nosotros" class="text-gray-600 hover:text-primary transition-colors">Nosotros</a>
+                    <a href="#clasificacion" class="text-gray-600 hover:text-primary transition-colors">Clasificación</a>
+                    <a href="#contacto" class="text-gray-600 hover:text-primary transition-colors">Contacto</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gray-600" id="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="flex flex-col space-y-4 mt-4 pb-4">
+                    <a href="#inicio" class="text-gray-600 hover:text-primary transition-colors">Inicio</a>
+                    <a href="#nosotros" class="text-gray-600 hover:text-primary transition-colors">Nosotros</a>
+                    <a href="#clasificacion" class="text-gray-600 hover:text-primary transition-colors">Clasificación</a>
+                    <a href="#contacto" class="text-gray-600 hover:text-primary transition-colors">Contacto</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-24 bg-primary">
+        <div class="container mx-auto px-6 py-20">
+            <div class="flex flex-col items-center">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0NSIgZmlsbD0iI2ZmZiIvPjx0ZXh0IHg9IjUwIiB5PSI1MCIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzAwNThBOCIgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAyMHB4OyBmb250LXdlaWdodDogYm9sZDsiPkNGQjwvdGV4dD48L3N2Zz4=" alt="CF Badalona Futur" class="h-32 mb-8">
+                <h1 class="text-4xl md:text-6xl font-bold text-white text-center mb-6">
+                    Club de Futbol Badalona Futur
+                </h1>
+                <p class="text-xl text-white text-center mb-8 max-w-2xl">
+                    Pasión, tradición y futuro del fútbol en Badalona
+                </p>
+            </div>
+        </div>
+        <div class="h-32 bg-white" style="clip-path: polygon(0 0, 100% 100%, 100% 100%, 0% 100%);"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="nosotros" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Sobre Nosotros</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Fundado en 1947 como Unión Deportiva Llagostera, el Club de Futbol Badalona Futur ha forjado una historia única en el fútbol catalán. Hoy, nuestro proyecto fusiona tradición e innovación, impulsando el talento local y ofreciendo un espectáculo competitivo en la Segunda Federación. Con orgullo y compromiso, trabajamos para representar a nuestra comunidad y seguir construyendo un futuro brillante para el fútbol en Badalona.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Standings Section -->
+    <section id="clasificacion" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Clasificación</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white shadow-lg rounded-lg overflow-hidden">
+                    <thead class="bg-primary text-white">
+                        <tr>
+                            <th class="py-3 px-4 text-left">Pos</th>
+                            <th class="py-3 px-4 text-left">Equipo</th>
+                            <th class="py-3 px-4 text-center">PT</th>
+                            <th class="py-3 px-4 text-center">PJ</th>
+                            <th class="py-3 px-4 text-center">PG</th>
+                            <th class="py-3 px-4 text-center">PE</th>
+                            <th class="py-3 px-4 text-center">PP</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-700">
+                        <tr class="standings-row">
+                            <td class="py-3 px-4">1</td>
+                            <td class="py-3 px-4">Europa FC</td>
+                            <td class="py-3 px-4 text-center">53</td>
+                            <td class="py-3 px-4 text-center">28</td>
+                            <td class="py-3 px-4 text-center">16</td>
+                            <td class="py-3 px-4 text-center">5</td>
+                            <td class="py-3 px-4 text-center">7</td>
+                        </tr>
+                        <tr class="standings-row">
+                            <td class="py-3 px-4">2</td>
+                            <td class="py-3 px-4">Sant Andreu</td>
+                            <td class="py-3 px-4 text-center">52</td>
+                            <td class="py-3 px-4 text-center">28</td>
+                            <td class="py-3 px-4 text-center">15</td>
+                            <td class="py-3 px-4 text-center">7</td>
+                            <td class="py-3 px-4 text-center">6</td>
+                        </tr>
+                        <tr class="standings-row">
+                            <td class="py-3 px-4">3</td>
+                            <td class="py-3 px-4">Atlético Baleares</td>
+                            <td class="py-3 px-4 text-center">48</td>
+                            <td class="py-3 px-4 text-center">28</td>
+                            <td class="py-3 px-4 text-center">13</td>
+                            <td class="py-3 px-4 text-center">9</td>
+                            <td class="py-3 px-4 text-center">6</td>
+                        </tr>
+                        <tr class="standings-row">
+                            <td class="py-3 px-4">4</td>
+                            <td class="py-3 px-4">Valencia II</td>
+                            <td class="py-3 px-4 text-center">46</td>
+                            <td class="py-3 px-4 text-center">28</td>
+                            <td class="py-3 px-4 text-center">13</td>
+                            <td class="py-3 px-4 text-center">7</td>
+                            <td class="py-3 px-4 text-center">8</td>
+                        </tr>
+                        <tr class="standings-row">
+                            <td class="py-3 px-4">5</td>
+                            <td class="py-3 px-4">Espanyol II</td>
+                            <td class="py-3 px-4 text-center">45</td>
+                            <td class="py-3 px-4 text-center">28</td>
+                            <td class="py-3 px-4 text-center">12</td>
+                            <td class="py-3 px-4 text-center">9</td>
+                            <td class="py-3 px-4 text-center">7</td>
+                        </tr>
+                        <tr class="standings-row">
+                            <td class="py-3 px-4">6</td>
+                            <td class="py-3 px-4">Sabadell</td>
+                            <td class="py-3 px-4 text-center">44</td>
+                            <td class="py-3 px-4 text-center">28</td>
+                            <td class="py-3 px-4 text-center">11</td>
+                            <td class="py-3 px-4 text-center">11</td>
+                            <td class="py-3 px-4 text-center">6</td>
+                        </tr>
+                        <tr class="standings-row">
+                            <td class="py-3 px-4">7</td>
+                            <td class="py-3 px-4">Torrent</td>
+                            <td class="py-3 px-4 text-center">43</td>
+                            <td class="py-3 px-4 text-center">28</td>
+                            <td class="py-3 px-4 text-center">11</td>
+                            <td class="py-3 px-4 text-center">10</td>
+                            <td class="py-3 px-4 text-center">7</td>
+                        </tr>
+                        <tr class="standings-row">
+                            <td class="py-3 px-4">8</td>
+                            <td class="py-3 px-4">Elche II</td>
+                            <td class="py-3 px-4 text-center">42</td>
+                            <td class="py-3 px-4 text-center">28</td>
+                            <td class="py-3 px-4 text-center">11</td>
+                            <td class="py-3 px-4 text-center">9</td>
+                            <td class="py-3 px-4 text-center">8</td>
+                        </tr>
+                        <tr class="standings-row">
+                            <td class="py-3 px-4">9</td>
+                            <td class="py-3 px-4">Lleida Esportiu</td>
+                            <td class="py-3 px-4 text-center">40</td>
+                            <td class="py-3 px-4 text-center">28</td>
+                            <td class="py-3 px-4 text-center">8</td>
+                            <td class="py-3 px-4 text-center">16</td>
+                            <td class="py-3 px-4 text-center">4</td>
+                        </tr>
+                        <tr class="standings-row">
+                            <td class="py-3 px-4">10</td>
+                            <td class="py-3 px-4">Ibiza Islas Pitiusas</td>
+                            <td class="py-3 px-4 text-center">39</td>
+                            <td class="py-3 px-4 text-center">28</td>
+                            <td class="py-3 px-4 text-center">10</td>
+                            <td class="py-3 px-4 text-center">9</td>
+                            <td class="py-3 px-4 text-center">9</td>
+                        </tr>
+                        <tr class="standings-row">
+                            <td class="py-3 px-4">11</td>
+                            <td class="py-3 px-4">Terrassa</td>
+                            <td class="py-3 px-4 text-center">39</td>
+                            <td class="py-3 px-4 text-center">28</td>
+                            <td class="py-3 px-4 text-center">10</td>
+                            <td class="py-3 px-4 text-center">9</td>
+                            <td class="py-3 px-4 text-center">9</td>
+                        </tr>
+                        <tr class="standings-row">
+                            <td class="py-3 px-4">12</td>
+                            <td class="py-3 px-4">Andratx</td>
+                            <td class="py-3 px-4 text-center">36</td>
+                            <td class="py-3 px-4 text-center">28</td>
+                            <td class="py-3 px-4 text-center">10</td>
+                            <td class="py-3 px-4 text-center">6</td>
+                            <td class="py-3 px-4 text-center">12</td>
+                        </tr>
+                        <tr class="standings-row">
+                            <td class="py-3 px-4">13</td>
+                            <td class="py-3 px-4">Olot</td>
+                            <td class="py-3 px-4 text-center">34</td>
+                            <td class="py-3 px-4 text-center">28</td>
+                            <td class="py-3 px-4 text-center">8</td>
+                            <td class="py-3 px-4 text-center">10</td>
+                            <td class="py-3 px-4 text-center">10</td>
+                        </tr>
+                        <tr class="standings-row">
+                            <td class="py-3 px-4">14</td>
+                            <td class="py-3 px-4">Alzira</td>
+                            <td class="py-3 px-4 text-center">30</td>
+                            <td class="py-3 px-4 text-center">28</td>
+                            <td class="py-3 px-4 text-center">7</td>
+                            <td class="py-3 px-4 text-center">9</td>
+                            <td class="py-3 px-4 text-center">12</td>
+                        </tr>
+                        <tr class="standings-row">
+                            <td class="py-3 px-4">15</td>
+                            <td class="py-3 px-4">Peña Deportiva</td>
+                            <td class="py-3 px-4 text-center">29</td>
+                            <td class="py-3 px-4 text-center">28</td>
+                            <td class="py-3 px-4 text-center">7</td>
+                            <td class="py-3 px-4 text-center">8</td>
+                            <td class="py-3 px-4 text-center">13</td>
+                        </tr>
+                        <tr class="standings-row">
+                            <td class="py-3 px-4">16</td>
+                            <td class="py-3 px-4">Cornellà</td>
+                            <td class="py-3 px-4 text-center">28</td>
+                            <td class="py-3 px-4 text-center">28</td>
+                            <td class="py-3 px-4 text-center">6</td>
+                            <td class="py-3 px-4 text-center">10</td>
+                            <td class="py-3 px-4 text-center">12</td>
+                        </tr>
+                        <tr class="standings-row">
+                            <td class="py-3 px-4">17</td>
+                            <td class="py-3 px-4">Badalona</td>
+                            <td class="py-3 px-4 text-center">17</td>
+                            <td class="py-3 px-4 text-center">28</td>
+                            <td class="py-3 px-4 text-center">3</td>
+                            <td class="py-3 px-4 text-center">8</td>
+                            <td class="py-3 px-4 text-center">17</td>
+                        </tr>
+                        <tr class="standings-row">
+                            <td class="py-3 px-4">18</td>
+                            <td class="py-3 px-4">Mallorca II</td>
+                            <td class="py-3 px-4 text-center">12</td>
+                            <td class="py-3 px-4 text-center">28</td>
+                            <td class="py-3 px-4 text-center">2</td>
+                            <td class="py-3 px-4 text-center">6</td>
+                            <td class="py-3 px-4 text-center">20</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Contacto</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            <div class="max-w-2xl mx-auto">
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-gray-700 mb-2" for="name">Nombre</label>
+                        <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-primary">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2" for="email">Email</label>
+                        <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-primary">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2" for="message">Mensaje</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-primary"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-primary-dark transition-colors">
+                        Enviar Mensaje
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">CF Badalona Futur</h3>
+                    <p class="text-gray-400">Pasión por el fútbol desde 1947</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Enlaces Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="text-gray-400 hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="#nosotros" class="text-gray-400 hover:text-white transition-colors">Nosotros</a></li>
+                        <li><a href="#clasificacion" class="text-gray-400 hover:text-white transition-colors">Clasificación</a></li>
+                        <li><a href="#contacto" class="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Síguenos</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 CF Badalona Futur. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
